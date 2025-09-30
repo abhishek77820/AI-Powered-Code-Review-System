@@ -1,0 +1,81 @@
+/* Container */
+main {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  padding: 1rem;
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.left,
+.right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* Code area scrollable */
+.left .code,
+.code pre,
+.code pre code {
+  flex: 1;
+  width: 100%;
+  margin: 0;
+  padding: 1rem;
+  border-radius: 0.7rem;
+  background: #1e1e2f;
+  color: #f5f5f5;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  overflow-y: auto;   
+  font-family: "Fira Code", monospace;
+  border: 1px solid #444;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* Review Button – fixed at bottom of left box */
+.left .review {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: #fff;
+  padding: 0.6rem 2rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 0.7rem;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+}
+
+.left .review:hover {
+  background: linear-gradient(135deg, #2575fc, #6a11cb);
+  transform: scale(1.08);
+}
+
+/* Right Section for review output */
+.right {
+  background: #1f1f2e;
+  color: #fff;
+  padding: 1rem;
+  border-radius: 0.7rem;
+  overflow-y: auto;
+  min-height: 400px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  main {
+    flex-direction: column;
+  }
+
+  .left .review {
+    position: static;
+    margin-top: 1rem;
+    align-self: flex-end;
+  }
+}
